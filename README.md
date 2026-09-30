@@ -16,12 +16,32 @@ A plain Western wedding invitation for colleagues: one ceremony, one venue, one 
 | Music | none | background track, opens behind a play button |
 | Story animation | none | California → Kansas map video |
 | Styling | ivory, charcoal, sage — English/Western | maroon, gold, cream — South Indian |
-| Ornament | a single leaf sprig | toran, muggu, thalambralu, deity artwork |
+| Ornament | laurel wreath, engraved frame, corner flourishes | toran, muggu, thalambralu, deity artwork |
 | Opens | straight to the invitation | behind a tap-to-open gate |
 | RSVP | **the same Google Form** | the same Google Form |
 
 There is no audio or video anywhere in this file, and nothing loads from a third party — the fonts
 ship with the site, so it renders identically on a corporate network that blocks Google Fonts.
+
+## How it is put together
+
+It is styled as engraved stationery rather than a web page: three cream cards on a linen ground,
+each with a fine double rule, gold corner flourishes and generous margins.
+
+- **Great Vibes** carries the names, the section headings and the monogram — a script face is the
+  single strongest signal of a Western wedding invitation. **Marcellus** does the letterspaced small
+  caps, **Cormorant Garamond** the body.
+- **The laurel wreath** at the top is generated, not hand-drawn: `wreathHalf()` walks a circle from
+  168° down to 26° (measured clockwise from twelve o'clock), placing a leaf at each step, rotated
+  `t - 90 + 22` so it sits along the tangent and splays outward. Only the right half is built — the
+  markup mirrors it with `translate(160 0) scale(-1 1)`, which is why the two sides match exactly.
+  Change the leaf count, taper or splay in that one function.
+- **The paper grain** is an inline SVG `feTurbulence` data URI, so there is no texture image to load.
+- **The date is spelled out** — *The Twenty-First of October, Two Thousand Twenty-Six, at ten
+  o'clock in the morning* — which is the traditional wording. The numeric form appears on the
+  details card, where people actually read times.
+
+Nothing loads from a third party: no icon fonts, no CSS framework, no images at all.
 
 ## Details shown
 
@@ -41,8 +61,9 @@ RSVP card, and nowhere else (it is not used by any script).
 
 ## Files
 
-- `index.html` — the whole site: HTML, CSS, JS and the SVG sprig, all inlined. No build step.
-- `assets/fonts/*.woff2` — self-hosted Marcellus + Cormorant Garamond (6 files, ~128 KB).
+- `index.html` — the whole site: HTML, CSS, JS and every SVG, all inlined. No build step.
+- `assets/fonts/*.woff2` — self-hosted Great Vibes, Marcellus and Cormorant Garamond
+  (7 files, ~170 KB).
 - `.nojekyll` — tells GitHub Pages to serve the files as-is.
 
 Total page weight is about 150 KB.
