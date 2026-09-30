@@ -37,9 +37,12 @@ each with a fine double rule, gold corner flourishes and generous margins.
   markup mirrors it with `translate(160 0) scale(-1 1)`, which is why the two sides match exactly.
   Change the leaf count, taper or splay in that one function.
 - **The paper grain** is an inline SVG `feTurbulence` data URI, so there is no texture image to load.
-- **The date is spelled out** — *The Twenty-First of October, Two Thousand Twenty-Six, at ten
-  o'clock in the morning* — which is the traditional wording. The numeric form appears on the
-  details card, where people actually read times.
+- **Dates and times are numeric throughout** — *Wednesday · 21 October 2026 · at 10:00 in the
+  morning*. The traditional spelled-out wording ("The Twenty-First of October…") was tried and
+  dropped: the couple wanted figures. The day of the week is the script accent instead, which keeps
+  the calligraphic note without hurting legibility.
+- The hero date is sized to sit on **one line at every width down to 320px**. If you ever lengthen
+  it, check that again — `clamp(1.5rem,6vw,2.15rem)` with `.15em` tracking is close to the limit.
 
 Nothing loads from a third party: no icon fonts, no CSS framework, no images at all.
 

@@ -7,7 +7,7 @@
 <meta name="description" content="Teja and Deeksha request the pleasure of your company at their wedding on Wednesday, 21 October 2026 in Shawnee, Kansas.">
 <meta name="robots" content="noindex, nofollow">
 <meta property="og:title" content="Teja &amp; Deeksha — 21 October 2026">
-<meta property="og:description" content="Wednesday, 21 October 2026 · Shawnee, Kansas. Ceremony at ten o'clock, followed by lunch.">
+<meta property="og:description" content="Wednesday, 21 October 2026 · Shawnee, Kansas. Ceremony 10:00–11:30 AM, followed by lunch.">
 <meta property="og:type" content="website">
 <meta name="theme-color" content="#f6f3ec">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='25' x='4' font-size='24'>%F0%9F%A4%8D</text></svg>">
@@ -126,10 +126,25 @@ svg{max-width:100%}
   margin:30px auto 0;padding:22px 0;max-width:460px;
   border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)
 }
-.occ-day{font-family:'Marcellus',serif;letter-spacing:.22em;text-transform:uppercase;font-size:.72rem;color:var(--sage-dk)}
-.occ-date{font-family:'Marcellus',serif;font-size:clamp(1.05rem,3.6vw,1.35rem);color:var(--ink);margin:9px 0;letter-spacing:.06em}
-.occ-time{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--muted);font-size:1.04rem}
-.occ-where{margin:14px 0 0;font-family:'Marcellus',serif;letter-spacing:.16em;text-transform:uppercase;font-size:.66rem;color:var(--sage-dk)}
+.occ-day{
+  font-family:'Great Vibes',cursive;font-size:clamp(1.7rem,5.2vw,2.25rem);
+  color:var(--sage-dk);line-height:1.05;letter-spacing:.01em
+}
+.occ-date{
+  font-family:'Cormorant Garamond',Georgia,serif;font-weight:300;
+  font-size:clamp(1.5rem,6vw,2.15rem);color:var(--ink);
+  margin:12px 0 10px;letter-spacing:.15em;line-height:1.4
+}
+.occ-time{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--muted);font-size:1.08rem}
+.occ-where{
+  margin:16px 0 0;font-family:'Marcellus',serif;letter-spacing:.18em;
+  text-transform:uppercase;font-size:.66rem;color:var(--sage-dk)
+}
+/* a hairline between the day and the date, as on engraved stock */
+.occ-date::before{
+  content:"";display:block;width:54px;height:1px;margin:0 auto 14px;
+  background:linear-gradient(90deg,transparent,var(--rule),transparent)
+}
 
 .actions{margin-top:30px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
 .btn{
@@ -286,8 +301,8 @@ footer .names-f{font-family:'Great Vibes',cursive;font-size:1.5rem;color:var(--s
 
       <div class="occasion">
         <p class="occ-day" style="margin:0">Wednesday</p>
-        <p class="occ-date">The Twenty-First of October<br>Two Thousand Twenty-Six</p>
-        <p class="occ-time" style="margin:0">at ten o&rsquo;clock in the morning</p>
+        <p class="occ-date">21 October 2026</p>
+        <p class="occ-time" style="margin:0">at 10:00 in the morning</p>
         <p class="occ-where">Shawnee, Kansas</p>
       </div>
 
@@ -311,10 +326,10 @@ footer .names-f{font-family:'Great Vibes',cursive;font-size:1.5rem;color:var(--s
       <div class="divider"><span class="ln"></span><span class="mk">&#10022;</span><span class="ln"></span></div>
 
       <p class="day-date">Wednesday, 21 October 2026</p>
-      <p class="day-note">Doors open from nine o&rsquo;clock</p>
+      <p class="day-note">Doors open from 9:00 AM</p>
 
       <div class="sched">
-        <div class="row"><span class="t">10:00 &ndash; 11:30 am</span><span class="w">The wedding ceremony</span></div>
+        <div class="row"><span class="t">10:00 &ndash; 11:30 AM</span><span class="w">The wedding ceremony</span></div>
         <div class="row"><span class="t">Thereafter</span><span class="w">Luncheon &amp; celebration</span></div>
       </div>
 
