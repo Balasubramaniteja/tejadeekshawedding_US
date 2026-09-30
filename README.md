@@ -13,6 +13,8 @@ A plain Western wedding invitation for colleagues: one ceremony, one venue, one 
 | | This version | The family version |
 |---|---|---|
 | Events shown | Wedding day only (21 Oct) | Haldi, Pellikoduku & Pellikuthuru, Wedding |
+| Pages | one card, everything on it | hero, families, events, RSVP, verse |
+| Names | first names only | full names with surnames |
 | Music | none | background track, opens behind a play button |
 | Story animation | none | California → Kansas map video |
 | Styling | ivory, charcoal, sage — English/Western | maroon, gold, cream — South Indian |
@@ -25,38 +27,43 @@ ship with the site, so it renders identically on a corporate network that blocks
 
 ## How it is put together
 
-It is styled as engraved stationery rather than a web page: three cream cards on a linen ground,
-each with a fine double rule, gold corner flourishes and generous margins.
+**One card, one page.** Everything — names, date, location and the RSVP form — sits inside a single
+piece of cream stationery on a linen ground, with a fine double rule and gold corner flourishes.
+There are no sections to scroll between and no second view.
 
-- **Great Vibes** carries the names, the section headings and the monogram — a script face is the
-  single strongest signal of a Western wedding invitation. **Marcellus** does the letterspaced small
-  caps, **Cormorant Garamond** the body.
-- **The laurel wreath** at the top is generated, not hand-drawn: `wreathHalf()` walks a circle from
-  168° down to 26° (measured clockwise from twelve o'clock), placing a leaf at each step, rotated
-  `t - 90 + 22` so it sits along the tangent and splays outward. Only the right half is built — the
-  markup mirrors it with `translate(160 0) scale(-1 1)`, which is why the two sides match exactly.
-  Change the leaf count, taper or splay in that one function.
+- **Great Vibes** carries the names, "Wednesday", the RSVP heading and the monogram — a script face
+  is the single strongest signal of a Western wedding invitation. **Marcellus** does the letterspaced
+  small caps, **Cormorant Garamond** the body and the date.
+- **Names are first names only** — *Teja* and *Sai Deeksha*. Surnames were removed at the couple's
+  request; there is no "Ganaparti" or "Enukonda" anywhere on the page.
+- **The laurel wreath** is generated, not hand-drawn: `wreathHalf()` walks a circle from 168° down to
+  26° (clockwise from twelve o'clock), placing a leaf at each step rotated `t - 90 + 22` so it sits
+  along the tangent and splays outward. Only the right half is built — the markup mirrors it with
+  `translate(160 0) scale(-1 1)`, which is why the two sides match exactly.
+- **The whole address block is the Maps link.** Tapping anywhere on it — pin, street, city, or the
+  "Tap for directions" line — opens turn-by-turn navigation. That is one `<a class="place">`
+  wrapping the lot, rather than a separate button beside the address.
 - **The paper grain** is an inline SVG `feTurbulence` data URI, so there is no texture image to load.
-- **Dates and times are numeric throughout** — *Wednesday · 21 October 2026 · at 10:00 in the
-  morning*. The traditional spelled-out wording ("The Twenty-First of October…") was tried and
-  dropped: the couple wanted figures. The day of the week is the script accent instead, which keeps
-  the calligraphic note without hurting legibility.
-- The hero date is sized to sit on **one line at every width down to 320px**. If you ever lengthen
-  it, check that again — `clamp(1.5rem,6vw,2.15rem)` with `.15em` tracking is close to the limit.
+- **Dates and times are numeric** — *Wednesday · 21 October 2026 · Ceremony at 10:00 AM*. The
+  spelled-out form ("The Twenty-First of October…") was tried and dropped.
+- *Sai Deeksha* is the longest line in the script face. It is checked to stay on **one line from
+  320px up**; if you lengthen a name, re-check that — `clamp(2.5rem,11.5vw,4.3rem)` is near the limit.
 
 Nothing loads from a third party: no icon fonts, no CSS framework, no images at all.
 
 ## Details shown
 
 ```
-Wednesday, 21 October 2026
-From 9:00 AM onwards
-  10:00 – 11:30 AM   Wedding ceremony
-  Followed by        Lunch
-6330 Lackman Rd, Shawnee, KS 66217
+Wednesday
+21 October 2026
+Ceremony at 10:00 AM · luncheon to follow
+6330 Lackman Rd, Shawnee, Kansas 66217   (tap to open Maps)
 ```
 
-The heading is "Wedding ceremony" rather than "Muhurtham" — this audience will not know the term.
+No "Muhurtham" anywhere — this audience will not know the term. The venue's hall name is **not**
+shown: "Shawnee Venue" was a placeholder that did not exist, so the card leads with the street
+address, which is also what the Maps link routes to. Add the real hall name above the street when
+you have it.
 
 **RSVP deadline is 10 October 2026**, not the 1 October used on the family invitation, because this
 one goes out later. Change it in two places if you want a different date: the visible line in the
